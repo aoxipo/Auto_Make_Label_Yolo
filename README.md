@@ -1,4 +1,4 @@
-# CT Slice Detection Pipeline (YOLOv5/v11 + LabelMe)
+# Auto Make Label YOLO (YOLOv5/v11 + LabelMe)
 
 本项目用于标签反打 **CT 切片数据的目标检测与标注生成**，整体流程为：
 
