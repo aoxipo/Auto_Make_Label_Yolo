@@ -45,9 +45,17 @@
 bin2png(input_data, folder_path)
 ```
 
+
 ### 4.2 推理与标注生成
 
 ```python
+input_data = '/data/lijunlin/data/CT/test/1/Slice/'
+folder_path = '/data/lijunlin/data/CT/test/png/1/'
+save_folder = folder_path + '/labelme/'
+
+DEVICE = 'cuda:0'
+WEIGHT_PATH = '/data/lijunlin/project/Detect/yolov11/runs/detect/train25/weights/best.pt' # 权重
+
 inferProcessor = InferenceProcessor(config)
 result = inferProcessor.inference(image)
 save_yolo_to_labelme(result[0], image_path, class_names, save_path)
