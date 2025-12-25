@@ -16,7 +16,7 @@
 ---
 
 ## 2. 目录结构示例
-
+```
 /data/lijunlin/data/CT/test/1/
 ├── Slice/
 ├── png/1/
@@ -25,7 +25,7 @@
 │   └── labelme/
 │       ├── 0001.json
 │       └── 0002.json
-
+```
 ---
 
 ## 3. 环境依赖
