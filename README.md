@@ -33,7 +33,7 @@
 - Python >= 3.8
 - torch / torchvision（CUDA 版本一致）
 - opencv-python
-- ultralytics
+- yolov5
 
 ---
 
