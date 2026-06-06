@@ -4,7 +4,8 @@ import cv2
 import numpy as np
 from src.ai_inference  import *
 from tool import load_processed_data
- 
+import argparse
+
 def bin2png( file_path, save_folder):
     os.makedirs( save_folder, exist_ok=True)
     volume_data = load_processed_data(file_path)
@@ -71,12 +72,38 @@ def save_yolo_to_labelme(result, image_path, class_names, save_path):
     print(f"✅ Saved labelme annotation to {save_path}")
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="auto make label for png images"
+    )
+
+    parser.add_argument(
+        "-i",
+        "--input",
+        required=True,
+        help="Input image file path"
+    )
+
+    parser.add_argument(
+        "-o",
+        "--output",
+        required=True,
+        help="Output folder path"
+    )
+    
+    parser.add_argument(
+        "-m",
+        "--model",
+        default=r"D:/work/Code/auto_make_label/weight/v11/best.pt", 
+        help="Model path",
+    )
+    
+    args = parser.parse_args()
     
     DEVICE = "cuda:0"
-    WEIGHT_PATH = r"D:/work/Code/auto_make_label/weight/v11/best.pt"  
+    WEIGHT_PATH = args.model # r"D:/work/Code/auto_make_label/weight/v11/best.pt"  
     model_type = "yolov11"
-    folder_path = r'D:/work/Code/auto_make_label/data/CT-2025-10-20-18-35-33/'
-    save_folder = r"D:/work/Code/auto_make_label/data/CT-2025-10-20-18-35-33/labelme/"
+    folder_path = args.input # r'D:/work/Code/auto_make_label/data/CT-2025-10-20-18-35-33/'
+    save_folder = args.output # r"D:/work/Code/auto_make_label/data/CT-2025-10-20-18-35-33/labelme/"
     os.makedirs(save_folder, exist_ok=True)
    
   
