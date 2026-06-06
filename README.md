@@ -73,7 +73,8 @@ save_yolo_to_labelme(result[0], image_path, class_names, save_path)
 ```shell
 # 假设 路径为 D:PATH/TO/BIN/CT-xxxx/Slice/
 python bin2png.py --input  D:PATH/TO/BIN/CT-xxxx/Slice/ --output  D:PATH/TO/BIN/CT-xxxx/png/
-python auto_make_label --input D:PATH/TO/BIN/CT-xxxx/png/ --output  D:PATH/TO/BIN/CT-xxxx/png/labelme/ -m /PATH/TO/MODEL.pth
+python auto_make_label.py --input D:PATH/TO/BIN/CT-xxxx/png/ --output  D:PATH/TO/BIN/CT-xxxx/png/labelme/ -m /PATH/TO/MODEL.pth
+python merge.py --input D:PATH/TO/BIN/CT-xxxx/png/labelme/ --output  D:PATH/TO/BIN/CT-xxxx/png/merge/  # 大部分情况 多层识别 得到的是同一个目标，使用merge操作合并所有层的识别结果
 ```
 ---
 
