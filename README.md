@@ -69,5 +69,11 @@ save_yolo_to_labelme(result[0], image_path, class_names, save_path)
 - 输入为单通道 CT 图像
 - YOLOv11 已内置 NMS
 
+## 6. 命令行直接调用
+```shell
+# 假设 路径为 D:PATH/TO/BIN/CT-xxxx/Slice/
+python bin2png.py --input  D:PATH/TO/BIN/CT-xxxx/Slice/ --output  D:PATH/TO/BIN/CT-xxxx/png/
+python auto_make_label --input D:PATH/TO/BIN/CT-xxxx/png/ --output  D:PATH/TO/BIN/CT-xxxx/png/labelme/ -m /PATH/TO/MODEL.pth
+```
 ---
 
