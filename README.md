@@ -75,6 +75,7 @@ save_yolo_to_labelme(result[0], image_path, class_names, save_path)
 python bin2png.py --input  D:PATH/TO/BIN/CT-xxxx/Slice/ --output  D:PATH/TO/BIN/CT-xxxx/png/
 python auto_make_label.py --input D:PATH/TO/BIN/CT-xxxx/png/ --output  D:PATH/TO/BIN/CT-xxxx/png/labelme/ -m /PATH/TO/MODEL.pth
 python merge.py --input D:PATH/TO/BIN/CT-xxxx/png/labelme/ --output  D:PATH/TO/BIN/CT-xxxx/png/merge/  # 大部分情况 多层识别 得到的是同一个目标，使用merge操作合并所有层的识别结果
+python json2txt.py --input D:PATH/TO/BIN/CT-xxxx/png/merge/           # 到这一步 将json文件转为 yolov11 train txt文件
 ```
 ---
 
